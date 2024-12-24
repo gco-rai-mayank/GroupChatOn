@@ -1,0 +1,221 @@
+  /* General form styling */
+  #groupLinkForm {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: inherit;
+  }
+
+  /* Label styling */
+  #groupLinkForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  /* Input field styling */
+  #groupLinkForm input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: inherit;
+    background: transparent;
+    color: #007bff;
+  }
+
+  /* Button styling */
+  #groupLinkForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-family: inherit;
+  }
+
+  #groupLinkForm button:hover {
+    background-color: #45a049;
+  }
+
+  /* Response paragraph styling */
+  #formResponse {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    font-family: inherit;
+    color: #007bff;
+  }
+
+  /* Links list container styling */
+  #linksList, .hidden-links-list {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: inherit;
+  }
+
+  /* Table border styling */
+  #linksList table, .hidden-links-list table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders collapse to avoid double borders */
+    margin-top: 15px;
+  }
+
+  #linksList th, .hidden-links-list th {
+    background-color: #4CAF50;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+  }
+
+  #linksList td, .hidden-links-list td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+  /* Header styling */
+  #linksList h2, .hidden-links-list h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: inherit;
+  }
+
+  /* Unordered list styling */
+  #linksList ul, .hidden-links-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: list-counter;
+  }
+
+  /* List items styling */
+  #linksList ul li, .hidden-links-list ul li {
+    background-color: transparent;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    color: #007bff;
+    position: relative;
+    padding-left: 35px;
+  }
+
+  /* Add numbering to list items */
+  #linksList ul li::before, .hidden-links-list ul li::before{
+    counter-increment: list-counter;
+    content: counter(list-counter) ".";
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+  }
+
+  /* Link styling */
+  #linksList ul li a, .hidden-links-list ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  #linksList ul li a:hover, .hidden-links-list ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* Optional button or icon inside list items */
+  #linksList ul li button,
+  #linksList ul li .action-icon, .hidden-links-list ul li button, .hidden-links-list ul li .action-icon, {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* Styling for Hide Button */
+  .hide-btn, .unhide-btn {
+    display: inline-block;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .hide-btn:hover, .unhide-btn:hover {
+    background-color: #e68a00;
+    transform: scale(1.05);
+  }
+
+  .hide-btn:active, .unhide-btn:active {
+    background-color: #cc7a00;
+    transform: scale(0.95);
+  }
+
+  /* Styling for the "Show Hidden Links" button */
+  #show-hidden-links-btn {
+    background-color: #007bff;
+    border: none;
+    font-size: 16px;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: inherit;
+  }
+
+  #show-hidden-links-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+
+  #show-hidden-links-btn:active {
+    background-color: #003f7f;
+    transform: scale(0.95);
+  }
+
+  #linksList td:nth-child(2), .hidden-links-list td:nth-child(2) {
+    word-wrap: break-word; /* Ensures text can wrap */
+    word-break: break-word; /* Breaks words if necessary */
+    white-space: normal; /* Allows wrapping and prevents overflow */
+    text-align: left;
+  }
+
+  #linksList td:nth-child(3), .hidden-links-list td:nth-child(3) {
+    white-space: nowrap;
+  }
+    #linksList td:nth-child(4), .hidden-links-list td:nth-child(4) {
+    text-align: center;
+  }
