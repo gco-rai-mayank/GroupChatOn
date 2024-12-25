@@ -51,7 +51,7 @@
     wrapText(ctx, postTitle, canvas.width / 2, 50, maxWidth, lineHeight);
 
     // 4. Set the style for the "GroupChatOn" text
-    ctx.fillStyle = "#39f"; // color for the initials
+    ctx.fillStyle = "#333333"; // color for the initials
     ctx.font = "bold 20px Jacques Francois"; // Smaller font size for the initials
     ctx.textAlign = "right"; // Align to the right
     ctx.textBaseline = "bottom"; // Align to the bottom
