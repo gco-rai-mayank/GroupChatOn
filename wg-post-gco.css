@@ -219,3 +219,13 @@
     #linksList td:nth-child(4), .hidden-links-list td:nth-child(4) {
     text-align: center;
   }
+
+  #visitor-message {
+    padding: 20px;
+    background-color: transparent;
+    border: 2px solid #4caf50;
+    margin: 10px;
+    border-radius: 8px;
+    font-family: inherit;
+    color: #007bff;
+}
