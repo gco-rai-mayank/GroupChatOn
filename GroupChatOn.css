@@ -1,0 +1,139 @@
+/* Mayank_rai | GroupChatOn
+-----------------------*/
+/* Default: Hide the message */
+.navigation-message {
+    display: none;
+    padding: 10px 20px;  /* Add padding for spacing */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+    border: 2px solid #ff9800;  /* Bright border for visibility */
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    max-width: 90%;  /* Limit the width of the message box */
+    margin-left: auto;
+    margin-right: auto;
+    animation: pulseAnimation 2s ease-in-out infinite;  /* Pulse effect */
+}
+
+/* Show the message only on laptop/desktop screens */
+@media screen and (min-width: 768px) {
+    .navigation-message {
+        display: block;  /* Make the message visible on desktop/laptop */
+    }
+}
+
+/* Pulse animation to catch the user's eye without enlarging the box too much */
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(1); /* Initial size */
+    }
+    50% {
+        transform: scale(1.05); /* Slightly enlarge the content */
+    }
+    100% {
+        transform: scale(1); /* Return to original size */
+    }
+}
+  .toc-button, .prev-button, .next-button, .support-us-button {
+    display: inline-block; /* Make link behave like a button */
+    background: linear-gradient(45deg, #1a1a1a, #333333); /* Dark gradient background */
+    color: #ffffff; /* White text color */
+    text-decoration: none; /* Remove underline from link */
+    border: none; /* No border */
+    border-radius: 20px; /* Slightly smaller border radius */
+    padding: 10px 20px; /* Reduced padding for a smaller button */
+    font-size: 16px; /* Slightly smaller font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background 0.3s, transform 0.3s; /* Smooth background and transform transition */
+}
+
+.toc-button:hover, .prev-button:hover, .next-button:hover, .support-us-button:hover {
+    background: linear-gradient(45deg, #333333, #1a1a1a); /* Reverse dark gradient on hover */
+    color: #ffffff; /* Ensure text stays white on hover */
+    transform: scale(1.1); /* Scale up the button on hover */
+}
+   /* Flex container to hold buttons side-by-side */
+    .button-container {
+        display: flex;
+        gap: 20px; /* Space between buttons */
+        flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+        justify-content: center; /* Center the buttons horizontally */
+        padding: 20px;
+    }
+    .custom-post {
+        font-family: Georgia; 
+        font-size: 1.2em;
+        line-height: 1.6;
+    }
+
+    /* Responsive styling for .custom-post */
+    @media (max-width: 1024px) {
+        .custom-post {
+            font-size: 1.2em; 
+        }
+    }
+
+    @media (max-width: 768px) {
+        .custom-post {
+            font-size: 1.1em; 
+        }
+    }
+
+    @media (max-width: 480px) {
+        .custom-post {
+            font-size: 1.05em; 
+        }
+    }
+  .user-guidance {
+    max-width: auto;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .user-guidance:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .user-guidance h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .user-guidance ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .user-guidance ul li {
+    padding: 10px;
+    border-left: 4px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+transition: background 0.3s ease;
+box-shadow: 0 0 8px rgba(0, 150, 0, 0.2); /* Subtle green glowing effect */
+  }
+
+  .user-guidance ul li:hover {
+    background: transparent; /* Fully transparent */
+  }
+
+  .user-guidance ul li strong {
+    color: #007BFF;
+  }
+
+  #myDivGroupChatOn {
+    padding: 20px;
+    background-color: transparent;
+    border: 2px solid #4caf50;
+    margin: 10px;
+    border-radius: 8px;
+    font-family: inherit;
+    color: #007bff;
+}
