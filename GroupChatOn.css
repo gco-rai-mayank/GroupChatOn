@@ -37,7 +37,8 @@
         transform: scale(1); /* Return to original size */
     }
 }
-  .toc-button, .prev-button, .next-button, .support-us-button {
+.toc-button, .prev-button, .next-button, .support-us-button,
+.toc-button:visited, .prev-button:visited, .next-button:visited, .support-us-button:visited {
     display: inline-block; /* Make link behave like a button */
     background: linear-gradient(45deg, #1a1a1a, #333333); /* Dark gradient background */
     color: #ffffff; /* White text color */
