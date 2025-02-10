@@ -1,0 +1,248 @@
+        /* Import FontAwesome */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+        /* Sidebar container for buttons */
+        .sidebar-section {
+            text-align: center; /* Replaces deprecated align="center" */
+        }
+
+        .sidebar-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* General styles for the button */
+        .telegram-button, .youtube-button {
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+        }
+
+        /* Maintain white color for visited links with higher specificity */
+        a.telegram-button:visited, a.youtube-button:visited {
+            color: white !important;
+        }
+
+        /* Telegram Button styles */
+        .telegram-button {
+            background-color: #0088cc;
+        }
+
+        .telegram-button:hover, .telegram-button:focus {
+            background-color: #007bb5;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            outline: 2px dashed #333;
+            outline-offset: 4px;
+        }
+
+        /* YouTube Button styles */
+        .youtube-button {
+            background-color: #FF0000;
+        }
+
+        .youtube-button:hover, .youtube-button:focus {
+            background-color: #cc0000;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            outline: 2px dashed #333;
+            outline-offset: 4px;
+        }
+
+        /* Icon styles */
+        .telegram-button i, .youtube-button i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .telegram-button, .youtube-button {
+                font-size: 14px;
+                padding: 10px 16px;
+            }
+
+            .telegram-button i, .youtube-button i {
+                font-size: 18px;
+            }
+
+            .custom-page-header {
+                font-size: 1.5em;
+                padding-bottom: 0.3em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .telegram-button, .youtube-button {
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+
+            .telegram-button i, .youtube-button i {
+                font-size: 16px;
+            }
+
+            .custom-page-header {
+                font-size: 1.35em;
+                padding-bottom: 0.3em;
+            }
+
+            .sidebar-buttons {
+                flex-direction: row;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .sidebar-buttons {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        /* Body style with page-specific class-based customization */
+        body.custom-page-body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Custom Header for this page */
+        .custom-page-header {
+            font-size: 1.85em;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 0.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    /* Body style with class-based customization */
+    body.custom-body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4; /* Optional background color */
+    }
+
+    /* Custom Header */
+    .custom-header {
+        font-size: 2em; /* Larger font size for header */
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 0.5em;
+        font-weight: bold;
+        letter-spacing: 2px; /* Adds spacing between letters */
+        margin-bottom: 20px; /* Adds space below the header */
+        text-align: center; /* Center the header text */
+    }
+
+    /* Stylish underline for header */
+    .custom-header::before {
+        content: "";
+        width: 100%; /* Make the underline span the width of the header text */
+        height: 4px;
+        background-color: #0088cc; /* Primary color for the underline */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateX(0); /* Make sure it's aligned with the left edge */
+        transition: width 0.3s ease; /* Smooth transition effect */
+    }
+
+    /* Hover effect for the underline */
+    .custom-header:hover::before {
+        width: 100%; /* Expand the underline width on hover */
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .custom-header {
+            font-size: 1.5em; /* Reduce font size for tablets */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .custom-header {
+            font-size: 1.25em; /* Further reduce font size for small screens */
+            padding-bottom: 0.3em; /* Reduce bottom padding */
+        }
+    }
+#navigationMessage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    visibility: hidden; /* Default to hidden on smaller screens */
+}
+
+#navigationMessage span {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+#closeMessage {
+    background: none;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    padding: 0 15px;
+    animation: pulseAnimation 1.5s ease-in-out infinite; /* Animation applied here */
+}
+
+#closeMessage:hover {
+    color: #ffcccc;
+    animation: none; /* Stop pulsing on hover */
+}
+
+/* Pulse animation for the close button */
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(1);
+        color: white;
+    }
+    50% {
+        transform: scale(1.2); /* Scale the icon slightly */
+        color: #ffcccc; /* Change color to a soft pink */
+    }
+    100% {
+        transform: scale(1);
+        color: white;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #navigationMessage {
+        visibility: visible; /* Show only on desktop or laptop screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #navigationMessage {
+        font-size: 14px;
+        padding: 10px;
+    }
+    #closeMessage {
+        font-size: 18px;
+    }
+}
