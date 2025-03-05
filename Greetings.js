@@ -79,7 +79,7 @@ const day = String(today.getDate()).padStart(2, '0');
 const dateKey = `${month}-${day}`;
 
 // Check if today matches any occasion
-const greetingMessage = occasions[dateKey] || "👋 Welcome to our site! Have a great day!";
+const greetingMessage = occasions[dateKey] || "👋 Welcome to GroupChatOn – connect, share & enjoy! Have a great day!";
 
 // Display the sparkling text greeting
 const greetingDiv = document.getElementById("greetingDiv");
