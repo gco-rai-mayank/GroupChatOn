@@ -94,5 +94,8 @@ document.addEventListener("DOMContentLoaded", () => fetchLinks());
 
 document.addEventListener("DOMContentLoaded", function() {
     let postTitle = document.title;
-    document.getElementById("postTitle").innerText = postTitle;
+    let elements = document.getElementsByClassName("postTitle");
+    Array.from(elements).forEach(function(element) {
+        element.innerText = postTitle;
+    });
 });
