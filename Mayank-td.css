@@ -1,0 +1,148 @@
+  /* Form Styling */
+form#groupLinkForm {
+  max-width: 500px;
+  margin: 0 auto 30px;
+  padding: 20px;
+  border: 1px solid #B51200;
+  border-radius: 8px;
+  background-color: transparent;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+form#groupLinkForm:hover {
+  box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.6),
+              0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+  }
+}
+
+form#groupLinkForm:focus-within {
+  animation: glowing 2s infinite;
+}
+
+form#groupLinkForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #007bff;
+  font-size: 20px;
+}
+
+form#groupLinkForm input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  font-size: 16px;
+  font: inherit;
+  background: transparent;
+  color: #25d366;
+}
+    
+form#groupLinkForm button[type="submit"] {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form#groupLinkForm button[type="submit"]:hover {
+  background-color: #1da851;
+}
+
+    @keyframes buttonGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(37, 211, 102, 0.4);
+  }
+}
+
+form#groupLinkForm button[type="submit"]:hover {
+  background-color: #1da851;
+  animation: buttonGlow 1.5s infinite alternate;
+}
+
+
+#formResponse {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* Make table responsive */
+#linksContainer {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+  th {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  font-weight: bold;
+}
+
+
+/* Allow wrapping for the 2nd column (Group Name) */
+td:nth-child(2), th:nth-child(2) {
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 200px; /* Adjust as needed */
+}
+
+/* Prevent wrapping for the 3rd column (Date) */
+td:nth-child(3), th:nth-child(3) {
+  white-space: nowrap;
+}
+    .table-gco {
+    font-size: 18px;
+  }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  th, td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  td:nth-child(2), th:nth-child(2) {
+    max-width: 150px; /* Adjust for smaller screens */
+  }
+}
