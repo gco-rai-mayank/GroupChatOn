@@ -1,0 +1,105 @@
+  form#groupLinkForm {
+  max-width: 500px;
+  margin: 0 auto 30px;
+  padding: 20px;
+  border: 1px solid #B51200;
+  border-radius: 8px;
+  background-color: transparent;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+form#groupLinkForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #007bff;
+  font-size: 20px;
+}
+form#groupLinkForm input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  font-size: 16px;
+  background: transparent;
+  color: #25d366;
+}
+form#groupLinkForm button[type="submit"] {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+}
+#formResponse {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* Upgraded Table Style */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  color: white;
+  background-color: #451f1f !important;
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 16px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+td {
+  padding: 12px 16px;
+  font-size: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr:hover td {
+  background-color: #f0fdf4;
+  transition: background-color 0.2s;
+  color: blue;
+}
+
+td:nth-child(1) {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+
+td:nth-child(2),
+td:nth-child(3) {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Join Button Upgrade */
+a.join-now-btn {
+  padding: 8px 14px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: background 0.2s, transform 0.2s;
+}
+
+a.join-now-btn:hover {
+  background-color: #1aa955;
+  transform: scale(1.03);
+}
