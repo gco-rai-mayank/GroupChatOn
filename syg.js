@@ -98,10 +98,10 @@ document.getElementById("groupLinkForm").addEventListener("submit", async functi
           <td style="padding: 10px; word-wrap: break-word; max-width: 300px;">${decodedGroupName}</td>
           <td style="padding: 10px; text-align: center;">${formattedDate}</td>
           <td style="padding: 10px; text-align: center;">
-            <a href="${groupLink}" target="_blank" 
-               style="padding: 6px 12px; background-color: #25D366; color: white; border-radius: 5px; text-decoration: none;">
-              Join Now
-            </a>
+            <a href="${groupLink}" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer"
+   style="display: inline-block; padding: 6px 12px; background-color: #25D366; color: white; border-radius: 5px; text-decoration: none;">
+  Join Now
+</a>
           </td>
         `;
         tbody.appendChild(row);
