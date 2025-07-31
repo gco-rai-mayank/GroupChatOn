@@ -6,7 +6,7 @@ document.getElementById("groupLinkForm").addEventListener("submit", async functi
     event.preventDefault();
 
     const groupLink = document.getElementById("group_link").value.trim();
-    const whatsappLinkRegex = /^(https:\/\/chat\.whatsapp\.com\/(invite\/)?[A-Za-z0-9]{20,}|https:\/\/www\.whatsapp\.com\/channel\/[A-Za-z0-9]{20,})$/;
+    const whatsappLinkRegex = /^(https:\/\/chat\.whatsapp\.com\/(invite\/)?[A-Za-z0-9]{20,}|https:\/\/(www\.)?whatsapp\.com\/channel\/[A-Za-z0-9]{20,})$/;
 
     if (!whatsappLinkRegex.test(groupLink)) {
       setFormResponse("Please provide a valid WhatsApp group or channel link.", "red");
