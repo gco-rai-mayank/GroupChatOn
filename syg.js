@@ -3,43 +3,50 @@
 // Developed with ChatGPT
 
 document.getElementById("groupLinkForm").addEventListener("submit", async function (event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const groupLink = document.getElementById("group_link").value.trim();
-    const whatsappLinkRegex = /^(https:\/\/chat\.whatsapp\.com\/(invite\/)?[A-Za-z0-9]{20,}|https:\/\/(www\.)?whatsapp\.com\/channel\/[A-Za-z0-9]{20,})$/;
+  let groupLink = document.getElementById("group_link").value.trim();
 
-    if (!whatsappLinkRegex.test(groupLink)) {
-      setFormResponse("Please provide a valid WhatsApp group or channel link.", "red");
+  // ✅ Remove everything after "?" if present
+  if (groupLink.includes("?")) {
+    groupLink = groupLink.split("?")[0];
+  }
+
+  const whatsappLinkRegex = /^(https:\/\/chat\.whatsapp\.com\/(invite\/)?[A-Za-z0-9]{20,}|https:\/\/(www\.)?whatsapp\.com\/channel\/[A-Za-z0-9]{20,})$/;
+
+  if (!whatsappLinkRegex.test(groupLink)) {
+    setFormResponse("Please provide a valid WhatsApp group or channel link.", "red");
+    this.reset();
+    return;
+  }
+
+  if (sharedLinks.includes(groupLink)) {
+    setFormResponse("This link has already been shared.", "orange");
+    this.reset();
+    return;
+  }
+
+  setFormResponse("Submitting... Please wait.", "blue");
+
+  try {
+    const response = await fetch(webAppUrl, {
+      method: "POST",
+      body: JSON.stringify({ group_link: groupLink }),
+    });
+
+    if (response.ok) {
+      setFormResponse("Link shared successfully!", "green");
+      sharedLinks.push(groupLink);
       this.reset();
-      return;
+      fetchLinks();
+    } else {
+      throw new Error("Submission failed");
     }
+  } catch (error) {
+    setFormResponse("An unexpected error occurred. Please try again.", "red");
+  }
+});
 
-    if (sharedLinks.includes(groupLink)) {
-      setFormResponse("This link has already been shared.", "orange");
-      this.reset();
-      return;
-    }
-
-    setFormResponse("Submitting... Please wait.", "blue");
-
-    try {
-      const response = await fetch(webAppUrl, {
-        method: "POST",
-        body: JSON.stringify({ group_link: groupLink }),
-      });
-
-      if (response.ok) {
-        setFormResponse("Link shared successfully!", "green");
-        sharedLinks.push(groupLink);
-        this.reset();
-        fetchLinks();
-      } else {
-        throw new Error("Submission failed");
-      }
-    } catch (error) {
-      setFormResponse("An unexpected error occurred. Please try again.", "red");
-    }
-  });
 
   function setFormResponse(message, color) {
     const responseEl = document.getElementById("formResponse");
